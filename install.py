@@ -34,7 +34,7 @@ def change_to_normal_dns():
 
 def install_xray_core():
     change_to_normal_dns()
-    os.system('bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version 1.8.24')
+    os.system('bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --version 25.5.16')
     os.system("systemctl disable --now xray snapd snapd.socket")
 
 def install_pip():
