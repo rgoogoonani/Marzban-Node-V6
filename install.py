@@ -6,7 +6,9 @@ data={
     "SERVICE_PORT":"62050",
     "XRAY_API_PORT":"62051",
     "SSL_CLIENT_CERT_FILE":marzban_path+"/ssl_client.pem",
-
+    "SSL_CERT_FILE":marzban_path+"/ssl_cert.pem",
+    "SSL_KEY_FILE":marzban_path+"/ssl_key.pem",
+    "SERVICE_PROTOCOL":"rest"
 
 }
 try:
@@ -82,7 +84,13 @@ def get_data():
     data["XRAY_API_PORT"]=str(input("Enter API port (Defult: 62051) : ")).strip() or "62051"
     print(data["XRAY_API_PORT"])
 
+def save_data():
+    with open(".env", "w") as f:
+        for key, value in data.items():
+            f.write(f"{key} = {value}\n")
+
 get_data()
+save_data()
 read_certificate()
 
 install_pip()
@@ -90,12 +98,4 @@ install_xray_core()
 install_python_packages()
 change_to_normal_dns()
 run_marzban_at_server_reboot(data["node_name"])
-
-
-
-
-
-
-
-
-
+print("Finish..........")
