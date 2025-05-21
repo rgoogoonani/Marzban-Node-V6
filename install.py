@@ -76,12 +76,15 @@ def read_certificate():
 
 def get_data():
     data["node_name"]=str(input("Enter Marzban node Name : ")).strip() or "node"
+    print(data["node_name"])
     data["SERVICE_PORT"]=str(input("Enter node port (Defult: 62050) : ")).strip() or "62050"
+    print(data["SERVICE_PORT"])
     data["XRAY_API_PORT"]=str(input("Enter API port (Defult: 62051) : ")).strip() or "62051"
+    print(data["XRAY_API_PORT"])
 
 get_data()
 read_certificate()
-print(data)
+
 install_pip()
 install_xray_core()
 install_python_packages()
