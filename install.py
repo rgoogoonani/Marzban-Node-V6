@@ -44,7 +44,11 @@ def install_pip():
 
 def install_python_packages():
     change_to_iran_dns()
-    os.system("pip install -r requirements.txt") # ubuntu 20 or lower
+    os.system("sudo apt-get upgrade openssl")
+    os.system("sudo apt-get upgrade python3-pip")
+    os.system("pip3 uninstall pyopenssl")
+    os.system("pip3 install pyopenssl")
+    os.system("pip3 install -r requirements.txt")
     change_to_normal_dns()
 
 def run_marzban_at_server_reboot(node_name):
