@@ -40,14 +40,13 @@ def install_xray_core():
 def install_pip():
     change_to_normal_dns()
     os.system('apt-get update')
-    os.system("apt install python3-pip build-essential libssl-dev libffi-dev libpq-dev python3-dev -y")
+    os.system("apt install build-essential libssl-dev libffi-dev libpq-dev python3-dev -y")
 
 def install_python_packages():
     change_to_iran_dns()
-    os.system("sudo apt-get upgrade openssl")
-    os.system("sudo apt-get upgrade python3-pip")
-    os.system("pip3 uninstall pyopenssl")
-    os.system("pip3 install pyopenssl")
+    os.system("sudo apt-get remove --purge python3-pip")
+    os.system("sudo apt-get install python3-pip")
+    os.system("pip3 install --upgrade pip")
     os.system("pip3 install -r requirements.txt")
     change_to_normal_dns()
 
