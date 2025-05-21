@@ -47,7 +47,7 @@ def install_python_packages():
 
 def run_marzban_at_server_reboot(node_name):
     
-    with open("""/etc/systemd/system/marzban-{node_name}.service""", "w") as file:
+    with open(f"""/etc/systemd/system/marzban-{node_name}.service""", "w") as file:
         file.write(f"""
 [Service]
 WorkingDirectory={marzban_path}
@@ -57,7 +57,7 @@ Restart=always
 WantedBy=multi-user.target
 """.strip("\n").strip())
     os.system("systemctl daemon-reload")
-    os.system("""systemctl enable --now marzban-{node_name}""")
+    os.system(f"""systemctl enable --now marzban-{node_name}""")
 
 
 def read_certificate():
