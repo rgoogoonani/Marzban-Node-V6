@@ -53,7 +53,7 @@ if __name__ == "__main__":
         logger.info(f"Node service running on :{SERVICE_PORT}")
         uvicorn.run(
             rest_service.app,
-            host="::",
+            host="0.0.0.0",
             port=SERVICE_PORT,
             ssl_keyfile=SSL_KEY_FILE,
             ssl_certfile=SSL_CERT_FILE,
