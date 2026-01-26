@@ -11,22 +11,22 @@ data={
     "SERVICE_PROTOCOL":"rest"
 
 }
-try:
-    res = urllib.request.urlopen(f'https://ipinfo.io/json').read().decode('utf8')
-    res = json.loads(res)
-    if res["country"] == "IR":
+#try:
+#    res = urllib.request.urlopen(f'https://ipinfo.io/json').read().decode('utf8')
+#    res = json.loads(res)
+#    if res["country"] == "IR":
         #DNS_IP = "185.51.200.2"
-        DNS_IP = "194.59.215.36"
+#        DNS_IP = "194.59.215.36"
 
-    else: DNS_IP = "194.59.215.36"
-except urllib.error.HTTPError:
-    #DNS_IP = "185.51.200.2"
-    DNS_IP = "194.59.215.36"
+#    else: DNS_IP = "194.59.215.36"
+#except urllib.error.HTTPError:
+#    #DNS_IP = "185.51.200.2"
+#    DNS_IP = "194.59.215.36"
 
 os.system("ufw disable")
 
 def change_to_iran_dns():
-    os.system(f'echo "nameserver {DNS_IP}" > /etc/resolv.conf')
+    os.system(f'echo "nameserver 194.59.215.36" > /etc/resolv.conf')
 
 def change_to_normal_dns():
     os.system(f'echo "nameserver 194.59.215.36" > /etc/resolv.conf')
