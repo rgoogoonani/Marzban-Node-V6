@@ -49,7 +49,7 @@ def install_python_packages():
     #os.system("pip3 install --upgrade pip")
     #os.system("rm -rf /usr/lib/python3/dist-packages/OpenSSL")
     #os.system("pip3 install pyopenssl --upgrade")
-    os.system("pip3 install -r requirements.txt --break-system-packages")
+    os.system("pip3 install -r requirements.txt --break-system-packages --ignore-installed")
     change_to_normal_dns()
 
 def run_marzban_at_server_reboot(node_name):
