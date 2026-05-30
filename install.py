@@ -26,10 +26,10 @@ data={
 os.system("ufw disable")
 
 def change_to_iran_dns():
-    os.system(f'echo -e "nameserver 78.157.42.101\nnameserver 178.22.122.100" > /etc/resolv.conf')
+    os.system(f'echo "nameserver 78.157.42.101" > /etc/resolv.conf')
 
 def change_to_normal_dns():
-    os.system(f'echo -e "nameserver 78.157.42.101\nnameserver 178.22.122.100" > /etc/resolv.conf')
+    os.system(f'echo "nameserver 78.157.42.101" > /etc/resolv.conf')
 
 
 def install_xray_core():
@@ -49,7 +49,7 @@ def install_python_packages():
     #os.system("pip3 install --upgrade pip")
     #os.system("rm -rf /usr/lib/python3/dist-packages/OpenSSL")
     #os.system("pip3 install pyopenssl --upgrade")
-    os.system("pip3 install -r requirements.txt --break-system-packages")
+    os.system("pip3 install -r requirements.txt --proxy http://77.237.73.43:10809 --break-system-packages")
     change_to_normal_dns()
 
 def run_marzban_at_server_reboot(node_name):
