@@ -26,10 +26,10 @@ data={
 os.system("ufw disable")
 
 def change_to_iran_dns():
-    os.system(f'echo "nameserver 78.157.42.101" > /etc/resolv.conf')
+    os.system(f'echo "nameserver 1.1.1.1" > /etc/resolv.conf')
 
 def change_to_normal_dns():
-    os.system(f'echo "nameserver 78.157.42.101" > /etc/resolv.conf')
+    os.system(f'echo "nameserver 1.1.1.1" > /etc/resolv.conf')
 
 
 def install_xray_core():
