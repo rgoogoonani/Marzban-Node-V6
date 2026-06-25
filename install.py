@@ -8,7 +8,7 @@ data={
     "SSL_CLIENT_CERT_FILE":marzban_path+"/ssl_client.pem",
     "SSL_CERT_FILE":marzban_path+"/ssl_cert.pem",
     "SSL_KEY_FILE":marzban_path+"/ssl_key.pem",
-    "SERVICE_PROTOCOL":"rest"
+    "SERVICE_PROTOCOL":"rpyc"
 
 }
 #try:
